@@ -18,7 +18,11 @@ const Card = (props) => {
       <div className="card-content" ref={selectedCard}>
         <div className="picture">
           <img
-            src={props.thumbnail.path + "." + props.thumbnail.extension}
+            src={
+              props.thumbnail.path.replace(/^http/, "https") +
+              "." +
+              props.thumbnail.extension
+            }
             alt={title}
           />
         </div>

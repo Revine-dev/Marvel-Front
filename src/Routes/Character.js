@@ -65,7 +65,11 @@ const Character = () => {
       <div className="character-details">
         <div className="picture">
           <img
-            src={character.thumbnail.path + "." + character.thumbnail.extension}
+            src={
+              character.thumbnail.path.replace(/^http/, "https") +
+              "." +
+              character.thumbnail.extension
+            }
             alt={character.name}
             className="character-thumbnail"
           />
