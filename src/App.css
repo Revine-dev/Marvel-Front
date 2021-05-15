@@ -48,6 +48,11 @@ header .logo {
   max-height: 50px;
 }
 
+header nav {
+  display: flex;
+  align-items: center;
+}
+
 header nav a + a {
   margin-left: 10px;
 }

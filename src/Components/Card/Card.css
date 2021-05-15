@@ -113,6 +113,8 @@
   background: linear-gradient(transparent 180px, white);
   border-bottom-left-radius: var(--borderRadiusCard);
   border-bottom-right-radius: var(--borderRadiusCard);
+  background-size: auto;
+  -webkit-background-size: 0;
 }
 
 .cards .card .full .infos {
