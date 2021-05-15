@@ -58,11 +58,14 @@ const Login = ({ logUser }) => {
     }
 
     try {
-      const response = await axios.post(`http://localhost:3100/users/signup`, {
-        email: emailSignup,
-        password: passwordSignup,
-        username: nameSignup,
-      });
+      const response = await axios.post(
+        `https://marvel-backend-revine.herokuapp.com/users/signup`,
+        {
+          email: emailSignup,
+          password: passwordSignup,
+          username: nameSignup,
+        }
+      );
       if (response.data.error) {
         return SetErrorSignup(response.data.message);
       } else if (response.data.success) {
