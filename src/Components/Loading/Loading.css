@@ -1,0 +1,21 @@
+main .loading:before {
+  content: " ";
+  display: block;
+  background: url("https://userguiding.com/wp-content/uploads/2020/08/preloader-design-tips-3.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+main .loading {
+  text-align: center;
+  margin: 30px;
+}
+
+body.loading main {
+  background: black;
+  color: white;
+}

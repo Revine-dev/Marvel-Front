@@ -1,0 +1,233 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards .card {
+  width: calc((100% / 5) - (50px / 6));
+  height: 290px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  border: 1px solid var(--gray);
+  background: white;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: var(--borderRadiusCard);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cards .card:nth-child(5n) {
+  margin-right: 0;
+}
+
+.cards .card.extended {
+  height: 340px;
+}
+
+.cards .card .card-content {
+  width: 100%;
+  height: 100%;
+}
+
+.card.lightshadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+}
+
+.cards .card:hover {
+  transform: scale(1.15);
+  z-index: 1;
+}
+
+.cards .card .picture {
+  width: 100%;
+  height: 65%;
+}
+
+.cards .card .picture img {
+  border-top-left-radius: var(--borderRadiusCard);
+  border-top-right-radius: var(--borderRadiusCard);
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.cards .card .infos {
+  text-align: center;
+  border-bottom-left-radius: var(--borderRadiusCard);
+  border-bottom-right-radius: var(--borderRadiusCard);
+  height: 35%;
+  padding: 5px;
+}
+
+.cards .card:not(.extended) .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cards .card:not(.extended) .infos div:only-child {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin: auto !important;
+}
+
+.cards .card:not(.extended) .infos div:last-child {
+  margin-bottom: 10px;
+}
+
+.cards .card .infos.grid {
+  display: grid;
+}
+
+.cards .card .title {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.cards .card .title.truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.cards .card .description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.cards .card.extended .description {
+  -webkit-line-clamp: 1;
+}
+
+.cards .card .infos.trunc:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(transparent 180px, white);
+  border-bottom-left-radius: var(--borderRadiusCard);
+  border-bottom-right-radius: var(--borderRadiusCard);
+}
+/*
+.flip-cards .card {
+  height: 340px;
+  perspective: 1000px;
+  transition-delay: 0.3s;
+}
+
+.flip-cards .card .card-content {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  position: relative;
+}
+
+.flip-cards .card:hover .card-content {
+  transform: rotateY(180deg);
+  transition-delay: 0.3s;
+}
+*/
+
+.cards .card .full .infos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.cards .card .full .infos::before {
+  background: none;
+}
+
+.cards .card .full .description,
+.cards .card .full .title.truncate {
+  display: block;
+  overflow: visible;
+}
+
+.cards .card .full .btn {
+  align-self: baseline;
+}
+
+.icon-save {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 7px;
+  width: 2em !important;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.icon-save.saved path {
+  fill: var(--redMarvel);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+}
+
+.popup .content {
+  color: black;
+  text-align: center;
+  padding: 25px;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  cursor: pointer;
+  top: 14px;
+  right: 15px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #e62429;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}

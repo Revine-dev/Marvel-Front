@@ -1,0 +1,21 @@
+.pagination {
+  text-align: center;
+}
+
+.pagination a:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.pagination .current {
+  color: gray;
+}
+
+.pagination .current:hover {
+  cursor: text;
+  text-decoration: none;
+}
+
+.noresult {
+  text-align: center;
+  margin: 30px;
+}

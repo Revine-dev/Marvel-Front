@@ -1,0 +1,119 @@
+@media (max-width: 1210px) {
+  .container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  section .cards .card {
+    width: calc((100% / 4) - (40px / 5));
+  }
+  section .cards .card:nth-child(5n) {
+    margin-right: 10px;
+  }
+  section .cards .card:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 750px) {
+  section .cards .card {
+    width: calc((100% / 2) - (20px / 3));
+  }
+  section .cards .card:nth-child(4n) {
+    margin-right: 10px;
+  }
+  section .cards .card:nth-child(2n) {
+    margin-right: 0;
+  }
+  .popup {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  header .header,
+  .header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .header nav {
+    margin-top: 10px;
+  }
+  header .btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  header nav a + a {
+    margin-left: 0;
+  }
+  section .cards .card:hover {
+    transform: none;
+  }
+
+  .connect .login-signup {
+    min-height: inherit;
+    max-width: inherit;
+    width: auto;
+    box-shadow: inherit;
+    border: 0;
+  }
+
+  .connect .login-signup .form-container,
+  .connect .login-signup .form-container,
+  .connect .overlay-container {
+    width: 100% !important;
+    position: inherit;
+    height: inherit;
+    opacity: inherit;
+    left: inherit;
+  }
+
+  .connect .login-signup form {
+    padding: 0;
+    display: block;
+  }
+
+  .connect .login-signup input {
+    margin: 0;
+  }
+
+  .connect .login-signup input + input,
+  .connect .login-signup input + button {
+    margin-top: 15px;
+  }
+
+  .connect .form-container.sign-in-container {
+    border-top: 2px solid #e62429;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+  .popup {
+    width: 70%;
+  }
+}
+
+@media (max-width: 400px) {
+  header .btn {
+    padding: 7px 15px;
+  }
+
+  section .cards .card {
+    width: 100%;
+  }
+  section .cards .card:nth-child(2n) {
+    margin-right: 0;
+  }
+  .subline {
+    flex-direction: column;
+  }
+  .subline .nb-found {
+    margin-bottom: 10px;
+  }
+  .pagination {
+    display: flex;
+    flex-direction: column;
+  }
+}
