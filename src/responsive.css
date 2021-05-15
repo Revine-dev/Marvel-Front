@@ -28,7 +28,7 @@
     margin-right: 0;
   }
   .popup {
-    width: 80%;
+    width: 80% !important;
   }
 }
 
