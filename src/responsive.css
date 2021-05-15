@@ -27,6 +27,13 @@
   section .cards .card:nth-child(2n) {
     margin-right: 0;
   }
+  .character-details {
+    flex-direction: column;
+  }
+  .character-thumbnail {
+    height: 100%;
+    max-height: auto;
+  }
   .popup {
     width: 80% !important;
   }
