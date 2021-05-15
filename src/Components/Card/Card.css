@@ -114,24 +114,6 @@
   border-bottom-left-radius: var(--borderRadiusCard);
   border-bottom-right-radius: var(--borderRadiusCard);
 }
-/*
-.flip-cards .card {
-  height: 340px;
-  perspective: 1000px;
-  transition-delay: 0.3s;
-}
-
-.flip-cards .card .card-content {
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-  position: relative;
-}
-
-.flip-cards .card:hover .card-content {
-  transform: rotateY(180deg);
-  transition-delay: 0.3s;
-}
-*/
 
 .cards .card .full .infos {
   position: absolute;
@@ -193,9 +175,9 @@
   padding: 25px;
 }
 
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
+.overlay.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .popup {
@@ -203,7 +185,7 @@
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  width: 50%;
+  width: 40%;
   position: relative;
   transition: all 5s ease-in-out;
 }

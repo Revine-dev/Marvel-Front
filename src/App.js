@@ -75,11 +75,16 @@ function App() {
       <div id="popup" className="overlay">
         <div className="popup">
           <h2>Information</h2>
-          <a className="close" href="#content">
+          <span
+            className="close"
+            onClick={(e) => {
+              e.target.parentNode.parentNode.className = "overlay";
+            }}
+          >
             &times;
-          </a>
+          </span>
           <div className="content">
-            Vous devez être connecté pour sauvegarder en favori
+            Connecte toi pour sauvegarder tes personnages et comics en favori
           </div>
         </div>
       </div>

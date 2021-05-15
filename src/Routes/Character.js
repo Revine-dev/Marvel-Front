@@ -80,7 +80,10 @@ const Character = () => {
                 : ""
             }`}
             onClick={(e) => {
-              e.preventDefault();
+              if (!helpers.isLogged()) {
+                document.body.children[1].children[2].className =
+                  "overlay visible";
+              }
               if (!helpers.isSaveInFavorite(character._id, "character")) {
                 helpers.saveToFavorite(
                   { ...character, category: "character" },

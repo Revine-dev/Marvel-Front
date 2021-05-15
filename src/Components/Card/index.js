@@ -53,7 +53,7 @@ const Card = (props) => {
           )}
         </div>
       </div>
-      <a
+      <span
         className={`icon-save${
           helpers.isSaveInFavorite(
             props._id,
@@ -63,10 +63,9 @@ const Card = (props) => {
             ? " saved"
             : ""
         }`}
-        href="#popup"
         onClick={(e) => {
-          if (helpers.isLogged()) {
-            e.preventDefault();
+          if (!helpers.isLogged()) {
+            document.body.children[1].children[2].className = "overlay visible";
           }
           if (
             !helpers.isSaveInFavorite(
@@ -89,7 +88,7 @@ const Card = (props) => {
         }}
       >
         <FontAwesomeIcon icon="heart" />
-      </a>
+      </span>
     </>
   );
 
