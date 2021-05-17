@@ -1,15 +1,17 @@
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Loading from "../Components/Loading";
 import Card from "../Components/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import helpers from "../Components/helpers";
+import { Modal } from "../App";
 
 const Character = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [character, setCharacter] = useState(false);
+  const modal = useContext(Modal);
   const [existingFavorites, setExistingFavorites] = useState([]);
   helpers.controlLoading(isLoading);
 
@@ -85,8 +87,7 @@ const Character = () => {
             }`}
             onClick={(e) => {
               if (!helpers.isLogged()) {
-                document.body.children[1].children[2].className =
-                  "overlay visible";
+                modal(true);
               }
               if (!helpers.isSaveInFavorite(character._id, "character")) {
                 helpers.saveToFavorite(

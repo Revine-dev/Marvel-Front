@@ -83,7 +83,6 @@ const Card = (props) => {
         }`}
         onClick={(e) => {
           e.preventDefault();
-          modal(true);
           if (!helpers.isLogged()) {
             modal(true);
           }
