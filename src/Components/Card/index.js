@@ -1,12 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Card.css";
 import helpers from "../helpers";
+import { Modal } from "../../App";
 
 const Card = (props) => {
   const location = useLocation();
   const selectedCard = useRef();
+  const modal = useContext(Modal);
   const title = props.name ? props.name : props.title ? props.title : "";
 
   const toggleBtnContent = (name, i) => {
@@ -81,8 +83,9 @@ const Card = (props) => {
         }`}
         onClick={(e) => {
           e.preventDefault();
+          modal(true);
           if (!helpers.isLogged()) {
-            document.body.children[1].children[2].className = "overlay visible";
+            modal(true);
           }
           if (
             !helpers.isSaveInFavorite(

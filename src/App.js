@@ -12,7 +12,7 @@ import Header from "./Components/Header";
 import AllCharacters from "./Routes/AllCharacters";
 import Character from "./Routes/Character";
 import Comics from "./Routes/Comics";
-import { useState, useRef } from "react";
+import { useState, useRef, createContext } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeart,
@@ -24,10 +24,13 @@ import Cookies from "js-cookie";
 import Login from "./Routes/Login";
 import helpers from "./Components/helpers";
 
+export const Modal = createContext();
+
 function App() {
   library.add(faHeart, faChevronDown, faExclamationCircle);
   const sessionName = helpers.getSessionName();
   const [token, setToken] = useState(Cookies.get(sessionName) || false);
+  const [modalOpen, setModalOpen] = useState(false);
   const modal = useRef();
 
   const logUser = (tokenToSave) => {
@@ -46,41 +49,46 @@ function App() {
   return (
     <Router>
       <Header isLogged={token} destroySession={destroySession} />
-      <main>
-        <div className="container" id="content">
-          <Switch>
-            <Route path="/login">
-              {token ? <Redirect to="/" /> : <Login logUser={logUser} />}
-            </Route>
-            <Route path="/signup">
-              {token ? <Redirect to="/" /> : <Login logUser={logUser} />}
-            </Route>
-            <Route path="/favorites">
-              {!token ? (
-                <Redirect to="/login" />
-              ) : (
-                <Favorites tokenuser={token} />
-              )}
-            </Route>
-            <Route path="/comics">
-              <Comics />
-            </Route>
-            <Route path="/character/:id">
-              <Character />
-            </Route>
-            <Route path="/">
-              <AllCharacters />
-            </Route>
-          </Switch>
-        </div>
-      </main>
-      {
-        <div id="popup" className="overlay" ref={modal}>
+      <Modal.Provider value={setModalOpen}>
+        <main>
+          <div className="container" id="content">
+            <Switch>
+              <Route path="/login">
+                {token ? <Redirect to="/" /> : <Login logUser={logUser} />}
+              </Route>
+              <Route path="/signup">
+                {token ? <Redirect to="/" /> : <Login logUser={logUser} />}
+              </Route>
+              <Route path="/favorites">
+                {!token ? (
+                  <Redirect to="/login" />
+                ) : (
+                  <Favorites tokenuser={token} />
+                )}
+              </Route>
+              <Route path="/comics">
+                <Comics />
+              </Route>
+              <Route path="/character/:id">
+                <Character />
+              </Route>
+              <Route path="/">
+                <AllCharacters />
+              </Route>
+            </Switch>
+          </div>
+        </main>
+        <div
+          id="popup"
+          className="overlay"
+          ref={modal}
+          style={{
+            visibility: modalOpen ? "visible" : "hidden",
+            opacity: modalOpen ? 1 : 0,
+          }}
+        >
           <div className="popup">
-            <span
-              className="close"
-              onClick={() => (modal.current.className = "overlay")}
-            >
+            <span className="close" onClick={() => setModalOpen(false)}>
               &times;
             </span>
             <img
@@ -97,14 +105,14 @@ function App() {
               <Link
                 to="/login"
                 className="btn"
-                onClick={() => (modal.current.className = "overlay")}
+                onClick={() => setModalOpen(false)}
               >
                 Je me connecte
               </Link>
             </div>
           </div>
         </div>
-      }
+      </Modal.Provider>
       <Footer />
     </Router>
   );
