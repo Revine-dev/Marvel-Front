@@ -57,7 +57,19 @@ const Card = (props) => {
           )}
         </div>
       </div>
-      <span
+    </>
+  );
+
+  return (
+    <div className={`card${props.displayBtnDesc ? " extended" : ""}`}>
+      {!props.noCardLink ? (
+        <Link to={`/character/${props._id}`}>{content}</Link>
+      ) : (
+        content
+      )}
+
+      <Link
+        to="/"
         className={`icon-save${
           helpers.isSaveInFavorite(
             props._id,
@@ -68,6 +80,7 @@ const Card = (props) => {
             : ""
         }`}
         onClick={(e) => {
+          e.preventDefault();
           if (!helpers.isLogged()) {
             document.body.children[1].children[2].className = "overlay visible";
           }
@@ -92,17 +105,7 @@ const Card = (props) => {
         }}
       >
         <FontAwesomeIcon icon="heart" />
-      </span>
-    </>
-  );
-
-  return (
-    <div className={`card${props.displayBtnDesc ? " extended" : ""}`}>
-      {!props.noCardLink ? (
-        <Link to={`/character/${props._id}`}>{content}</Link>
-      ) : (
-        content
-      )}
+      </Link>
     </div>
   );
 };

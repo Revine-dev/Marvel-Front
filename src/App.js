@@ -5,13 +5,14 @@ import {
   Switch,
   Route,
   Redirect,
+  Link,
 } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import AllCharacters from "./Routes/AllCharacters";
 import Character from "./Routes/Character";
 import Comics from "./Routes/Comics";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faHeart,
@@ -27,6 +28,7 @@ function App() {
   library.add(faHeart, faChevronDown, faExclamationCircle);
   const sessionName = helpers.getSessionName();
   const [token, setToken] = useState(Cookies.get(sessionName) || false);
+  const modal = useRef();
 
   const logUser = (tokenToSave) => {
     if (token) {
@@ -72,22 +74,37 @@ function App() {
           </Switch>
         </div>
       </main>
-      <div id="popup" className="overlay">
-        <div className="popup">
-          <h2>Information</h2>
-          <span
-            className="close"
-            onClick={(e) => {
-              e.target.parentNode.parentNode.className = "overlay";
-            }}
-          >
-            &times;
-          </span>
-          <div className="content">
-            Connecte toi pour sauvegarder tes personnages et comics en favori
+      {
+        <div id="popup" className="overlay" ref={modal}>
+          <div className="popup">
+            <span
+              className="close"
+              onClick={() => (modal.current.className = "overlay")}
+            >
+              &times;
+            </span>
+            <img
+              src="https://www.steltix.com/wp-content/uploads/2019/09/icon_products_Transparent-Logon-200x200.png"
+              alt="Connexion nécessaire"
+              width="70px"
+              height="70px"
+            />
+            <div className="content">
+              <div>
+                Connecte toi pour sauvegarder tes personnages et comics en
+                favori
+              </div>
+              <Link
+                to="/login"
+                className="btn"
+                onClick={() => (modal.current.className = "overlay")}
+              >
+                Je me connecte
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      }
       <Footer />
     </Router>
   );
