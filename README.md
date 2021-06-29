@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Vinted
 
-## Available Scripts
+Marvel Favorites made with React
 
-In the project directory, you can run:
+🗄 Backend : [Checkout the repo](https://github.com/Revine-dev/Marvel-Backend)
 
-### `yarn start`
+📱 Responsive : ✅
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🖥 Languages : 
+[![HTML](https://user-images.githubusercontent.com/59733143/123686859-8b3dd280-d850-11eb-94e7-eb44c8179dcc.png)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+[![CSS](https://user-images.githubusercontent.com/59733143/123686862-8bd66900-d850-11eb-97c5-1cb2889aaf39.png)](https://developer.mozilla.org/en-US/docs/Glossary/CSS)
+[![REACT](https://user-images.githubusercontent.com/59733143/123792579-0fd83180-d8e1-11eb-992e-529cacb03bf0.png)](https://fr.reactjs.org/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+🎙 Live version : https://marvel-revine.netlify.app/
 
-### `yarn test`
+⚒ Features : Search, Autocomplete, Change items per page, Add/Remove to favorites, Signup, Login, Pagination
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Overview :
 
-### `yarn build`
+* [Mobile version](#mobile-version)
+* [Computer version](#computer-version)
+* [Autocomplete](#autocomplete)
+* [Login Signup](#login-signup)
+* [Add to Favorites](#add-to-favorites)
+* [Favorites](#favorites)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Mobile version: 
+![Screenshot 2021-06-29 at 15-27-24 Marvel](https://user-images.githubusercontent.com/59733143/123809112-9f85dc00-d8f1-11eb-931a-57b07e028c4f.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Computer version:
+![Screenshot 2021-06-29 at 15-27-30 Marvel](https://user-images.githubusercontent.com/59733143/123808637-3900be00-d8f1-11eb-8f07-3dfc53466267.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Autocomplete
+![recording](https://user-images.githubusercontent.com/59733143/123808530-21293a00-d8f1-11eb-9f7d-28503a23917b.gif)
 
-### `yarn eject`
+## Login Signup:
+![recording login](https://user-images.githubusercontent.com/59733143/123808097-bd9f0c80-d8f0-11eb-99b2-995123e6ce35.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Add to Favorites
+![recording(2)](https://user-images.githubusercontent.com/59733143/123808118-c263c080-d8f0-11eb-951c-a952aac2527d.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Favorites
+![Screenshot 2021-06-29 at 15-34-39 Marvel](https://user-images.githubusercontent.com/59733143/123809208-b6c4c980-d8f1-11eb-84d6-b1388efb761c.png)
