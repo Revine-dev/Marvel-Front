@@ -23,7 +23,7 @@ const Favorites = ({ tokenuser }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvel-backend-revine.herokuapp.com/favorites/`,
+        `https://marvel-revine.onrender.com/favorites/`,
         {
           headers: {
             Authorization: "Bearer " + tokenuser,

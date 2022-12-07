@@ -32,7 +32,7 @@ const Login = ({ logUser }) => {
 
     try {
       const response = await axios.post(
-        `https://marvel-backend-revine.herokuapp.com/users/login`,
+        `https://marvel-revine.onrender.com/users/login`,
         {
           email: emailLogin,
           password: passwordLogin,
@@ -59,7 +59,7 @@ const Login = ({ logUser }) => {
 
     try {
       const response = await axios.post(
-        `https://marvel-backend-revine.herokuapp.com/users/signup`,
+        `https://marvel-revine.onrender.com/users/signup`,
         {
           email: emailSignup,
           password: passwordSignup,

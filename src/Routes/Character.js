@@ -18,7 +18,7 @@ const Character = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvel-backend-revine.herokuapp.com/character/${id}`
+        `https://marvel-revine.onrender.com/character/${id}`
       );
       setCharacter(response.data);
       setIsLoading(false);
@@ -33,7 +33,7 @@ const Character = () => {
 
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvel-backend-revine.herokuapp.com/favorites/`,
+        `https://marvel-revine.onrender.com/favorites/`,
         {
           headers: {
             Authorization: "Bearer " + helpers.getSessionName(true),

@@ -18,7 +18,7 @@ const Comics = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvel-backend-revine.herokuapp.com/comics/?page=${page}&search=${search}&limit=${limit}`
+        `https://marvel-revine.onrender.com/comics/?page=${page}&search=${search}&limit=${limit}`
       );
 
       setData(response.data);
@@ -35,7 +35,7 @@ const Comics = () => {
 
     const fetchData = async () => {
       const response = await axios.get(
-        `https://marvel-backend-revine.herokuapp.com/favorites/`,
+        `https://marvel-revine.onrender.com/favorites/`,
         {
           headers: {
             Authorization: "Bearer " + helpers.getSessionName(true),

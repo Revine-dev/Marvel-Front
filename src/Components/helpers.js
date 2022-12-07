@@ -77,7 +77,7 @@ const helpers = {
     } else {
       try {
         const response = await axios.post(
-          `https://marvel-backend-revine.herokuapp.com/favorites/save`,
+          `https://marvel-revine.onrender.com/favorites/save`,
           {
             id_card: item._id,
             item: item,
@@ -116,7 +116,7 @@ const helpers = {
 
     try {
       const response = await axios.post(
-        `https://marvel-backend-revine.herokuapp.com/favorites/remove`,
+        `https://marvel-revine.onrender.com/favorites/remove`,
         {
           id: id,
           category: category,
